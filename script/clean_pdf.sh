@@ -37,6 +37,7 @@ clean_pdf(){
     pdfinfo -meta clean2-${fn}
     rm clean-${fn}
     mv clean2-${fn} ${fn}
+    rm clean-${fn}_original
     cd -
 }
 
