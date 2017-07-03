@@ -8,8 +8,7 @@ mv "${1}" "${tmpname}"
 echo in: ${1}
 echo tmp: ${tmpname}
 ls build
-cmdline="gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=/data/${1} /data/${tmpname}"
-docker run -u `id -u`:`id -g` --rm -v ${PWD}:/data:z cajanzen/texbuilder ${cmdline}
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=/data/${1} /data/${tmpname}
 rm -f "${tmpname}"
 [ $# -gt 1 ] && { shift ; ${0} $* ; }
 (exit 0)
