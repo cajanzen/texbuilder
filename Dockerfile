@@ -13,6 +13,6 @@ RUN apt-get update -q \
     texlive-full \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /usr/share/doc/texlive-doc  # 1.5G of documentation!
-COPY ./script /script
+COPY ./script/* /usr/local/bin
 WORKDIR /data
 VOLUME ["/data"]
