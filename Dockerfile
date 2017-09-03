@@ -1,4 +1,4 @@
-FROM cajanzen/webdev-toolkit
+FROM cajanzen/webdev-toolkit:latest
 MAINTAINER Carl Janzen <carl.janzen@gmail.com>
 
 RUN apt-get install -qy \
