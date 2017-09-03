@@ -2,7 +2,8 @@ FROM cajanzen/webdev-toolkit:latest
 MAINTAINER Carl Janzen <carl.janzen@gmail.com>
 
 RUN echo "deb http://download.tuxfamily.org/arakhne/ubuntu xenial-arakhne universe" >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -qy \
+RUN apt-key adv --recv-keys --keyserver pgp.mit.edu 21A59D90
+RUN apt-get update && apt-get install -qy --allow-unauthenticated \
   autolatex \
   exiftool \
   ghostscript \
