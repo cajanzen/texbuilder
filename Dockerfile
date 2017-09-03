@@ -1,7 +1,9 @@
 FROM cajanzen/webdev-toolkit:latest
 MAINTAINER Carl Janzen <carl.janzen@gmail.com>
 
-RUN apt-get install -qy \
+RUN echo "deb http://download.tuxfamily.org/arakhne/ubuntu xenial-arakhne universe" >> /etc/apt/sources.list
+RUN apt-get update && apt-get install -qy \
+  autolatex \
   exiftool \
   ghostscript \
   pdftk \
