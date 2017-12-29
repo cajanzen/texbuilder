@@ -1,4 +1,4 @@
-FROM cajanzen/webdev-toolkit:latest
+FROM cajanzen/webdev-toolkit:201709
 MAINTAINER Carl Janzen <carl.janzen@gmail.com>
 
 RUN echo "deb http://download.tuxfamily.org/arakhne/ubuntu xenial-arakhne universe" >> /etc/apt/sources.list
