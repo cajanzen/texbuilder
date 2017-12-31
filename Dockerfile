@@ -1,7 +1,5 @@
 FROM eclipse/stack-base:ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
-EXPOSE 8000 22
-LABEL che:server:8000:ref=nginx che:server:8000:protocol=http
 
 RUN wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN sudo apt-get update && sudo apt-get install -qy --allow-unauthenticated \
@@ -43,3 +41,5 @@ RUN sudo npm install --unsafe-perm -g \
   yeoman-generator 
 
 COPY nginx_default /etc/nginx/sites-available/default 
+EXPOSE 80 22
+LABEL che:server:80:ref=nginx che:server:80:protocol=http
