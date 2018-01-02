@@ -38,6 +38,7 @@ RUN sudo npm install --unsafe-perm -g \
   grunt \
   gulp \
   slush \
+  vim-nox \
   yeoman-generator 
 
 RUN sudo bash -c 'echo "deb http://ftp.uk.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
