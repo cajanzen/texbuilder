@@ -40,6 +40,15 @@ RUN sudo npm install --unsafe-perm -g \
   slush \
   yeoman-generator 
 
+RUN sudo bash -c 'echo "deb http://ftp.uk.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
+  && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553'
+
+RUN sudo apt-get update  && sudo apt-get install -qy \
+  asciinema \
+  ffmpeg \
+  graphviz \
+  && sudo rm -rf /var/lib/apt/lists/*
+
 COPY nginx_default /etc/nginx/sites-available/default 
 EXPOSE 80 22
 LABEL che:server:80:ref=nginx che:server:80:protocol=http
