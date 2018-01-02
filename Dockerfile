@@ -1,8 +1,8 @@
 FROM eclipse/stack-base:ubuntu
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
-RUN sudo apt-get update && sudo apt-get install -qy --allow-unauthenticated \
+# RUN sudo apt-get update && sudo apt-get install -qy --allow-unauthenticated \
+RUN sudo apt-get update && sudo apt-get install -qy \
   build-essential \
   exiftool \
   ghostscript \
@@ -15,7 +15,8 @@ RUN sudo apt-get update && sudo apt-get install -qy --allow-unauthenticated \
   pdftk \
   poppler-utils \
   python \
-  python-dev \
+  python-all-dev \
+  python3-all-dev \
   python-pip \
   python-setuptools \
   python-virtualenv \
@@ -31,16 +32,6 @@ RUN sudo apt-get update && sudo apt-get install -qy --allow-unauthenticated \
   && sudo rm -rf /var/lib/apt/lists/* \
   && sudo rm -rf /usr/share/doc/texlive-doc  # 1.5G of documentation!
  
-RUN sudo npm install --unsafe-perm -g \
-  bower \
-  generator-angular \
-  generator-karma \
-  generator-webapp \
-  grunt \
-  gulp \
-  slush \
-  yeoman-generator 
-
 RUN sudo bash -c 'echo "deb http://ftp.uk.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
   && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553'
 
