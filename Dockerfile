@@ -24,11 +24,12 @@ RUN sudo apt-get update && sudo apt-get install -qy --allow-unauthenticated \
   ruby-full \
   rubygems \
   texlive-full \
-  unzip && \
-  sudo apt-get -y autoremove && \
-  sudo apt-get -y clean && \
-  sudo rm -rf /var/lib/apt/lists/* && \
-  sudo rm -rf /usr/share/doc/texlive-doc  # 1.5G of documentation!
+  unzip \
+  vim-nox \
+  && sudo apt-get -y autoremove \
+  && sudo apt-get -y clean \
+  && sudo rm -rf /var/lib/apt/lists/* \
+  && sudo rm -rf /usr/share/doc/texlive-doc  # 1.5G of documentation!
  
 RUN sudo npm install --unsafe-perm -g \
   bower \
@@ -38,7 +39,6 @@ RUN sudo npm install --unsafe-perm -g \
   grunt \
   gulp \
   slush \
-  vim-nox \
   yeoman-generator 
 
 RUN sudo bash -c 'echo "deb http://ftp.uk.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
