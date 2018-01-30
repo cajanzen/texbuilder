@@ -43,4 +43,4 @@ RUN sudo apt-get update  && sudo apt-get install -qy \
 
 COPY nginx_default /etc/nginx/sites-available/default 
 EXPOSE 80 22
-LABEL che:server:8003:ref=nginx che:server:8003:protocol=http
+LABEL che:server:80:ref=nginx che:server:80:protocol=http
