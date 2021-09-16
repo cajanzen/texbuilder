@@ -29,8 +29,8 @@ RUN sudo apt-get update && sudo apt-get install -qy \
   && sudo apt-get -y clean \
   && sudo rm -rf /var/lib/apt/lists/* 
  
-RUN sudo bash -c 'echo "deb http://ftp.uk.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
-  && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553'
+#RUN sudo bash -c 'echo "deb http://ftp.uk.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
+#  && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553'
 
 RUN sudo apt-get update  && sudo apt-get install -qy \
   asciinema \
@@ -40,7 +40,7 @@ RUN sudo apt-get update  && sudo apt-get install -qy \
 
 COPY nginx_default /etc/nginx/sites-available/default 
 EXPOSE 80 22
-LABEL che:server:80:ref=nginx che:server:80:protocol=http
+#LABEL che:server:80:ref=nginx che:server:80:protocol=http
 
 ADD http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz /tmp
 COPY texlive.profile /tmp
